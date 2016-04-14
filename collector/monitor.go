@@ -163,5 +163,5 @@ func extractEnv(c *docker.Container, envPrefix string) string {
 }
 
 func sanitizeForGraphite(s string) string {
-	return strings.Replace(s, ".", "_", -1)
+	return strings.Replace(strings.Replace(s, ".", "_", -1), "-", "_", -1)
 }
