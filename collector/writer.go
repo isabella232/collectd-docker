@@ -33,6 +33,10 @@ func (w CollectdWriter) writeInts(s Stats) error {
 		"cpu.user":   s.Stats.CPUStats.CPUUsage.UsageInUsermode,
 		"cpu.system": s.Stats.CPUStats.CPUUsage.UsageInKernelmode,
 		"cpu.total":  s.Stats.CPUStats.CPUUsage.TotalUsage,
+		"cpu.throttled.periods":  s.Stats.CPUStats.ThrottlingData.Periods,
+		"cpu.throttled.throttled_periods":  s.Stats.CPUStats.ThrottlingData.ThrottledPeriods,
+		"cpu.throttled.throttled_time":  s.Stats.CPUStats.ThrottlingData.ThrottledTime,
+		"cpu.host": s.Stats.CPUStats.SystemCPUUsage,
 
 		"memory.limit": s.Stats.MemoryStats.Limit,
 		"memory.max":   s.Stats.MemoryStats.MaxUsage,
